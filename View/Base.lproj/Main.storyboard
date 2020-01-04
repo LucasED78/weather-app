@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ylq-JH-72l">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather View Controller-->
+        <scene sceneID="JiT-uM-UEr">
+            <objects>
+                <viewController id="Ylq-JH-72l" customClass="WeatherViewController" customModule="Clima" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfS-Vf-LsE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="iwt-tj-nuE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ubo-Pr-HbL" userLabel="Location Stack View">
+                                <rect key="frame" x="10" y="49" width="394" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dgT-SX-GIl">
+                                        <rect key="frame" x="0.0" y="0.5" width="40" height="29"/>
+                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="kxX-vI-t1r"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVR-ve-EWy">
+                                        <rect key="frame" x="45" y="0.0" width="304" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="J46-vd-9NX">
+                                        <rect key="frame" x="354" y="1" width="40" height="28"/>
+                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="3pl-vU-sOu"/>
+                                            <constraint firstAttribute="height" constant="30" id="WkC-Er-uKt"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.drizzle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1h6-bh-iIK">
+                                <rect key="frame" x="304" y="94" width="100" height="101.5"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="597-he-xaU"/>
+                                    <constraint firstAttribute="width" constant="100" id="fbH-VH-a1x"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gbQ-JF-LZ5" userLabel="Temperature Stack View">
+                                <rect key="frame" x="254" y="202" width="150" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="19" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7L1-xz-dKD">
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="100"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2M-eh-DQO">
+                                        <rect key="frame" x="77" y="0.0" width="24.5" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEJ-JL-XXR">
+                                        <rect key="frame" x="106.5" y="0.0" width="43.5" height="100"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="RzA-e3-54n"/>
+                                    <constraint firstAttribute="height" constant="100" id="ffi-U3-qG8"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUz-ko-jMY">
+                                <rect key="frame" x="296.5" y="310" width="102.5" height="35"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gbQ-JF-LZ5" firstAttribute="top" secondItem="1h6-bh-iIK" secondAttribute="bottom" constant="8" id="3OA-F8-hGW"/>
+                            <constraint firstItem="HIX-BJ-4D1" firstAttribute="trailing" secondItem="Ubo-Pr-HbL" secondAttribute="trailing" constant="10" id="4qV-EE-y0c"/>
+                            <constraint firstItem="AUz-ko-jMY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HIX-BJ-4D1" secondAttribute="leading" symbolic="YES" id="BNS-Ba-OVZ"/>
+                            <constraint firstItem="HIX-BJ-4D1" firstAttribute="trailing" secondItem="AUz-ko-jMY" secondAttribute="trailing" constant="15" id="K8Y-3M-R7x"/>
+                            <constraint firstAttribute="trailing" secondItem="iwt-tj-nuE" secondAttribute="trailing" id="PI1-Tq-Hta"/>
+                            <constraint firstAttribute="bottom" secondItem="iwt-tj-nuE" secondAttribute="bottom" id="SPv-eL-Ee5"/>
+                            <constraint firstItem="HIX-BJ-4D1" firstAttribute="trailing" secondItem="1h6-bh-iIK" secondAttribute="trailing" constant="10" id="fqx-eh-WVk"/>
+                            <constraint firstItem="iwt-tj-nuE" firstAttribute="top" secondItem="hfS-Vf-LsE" secondAttribute="top" id="fyE-Fo-cWZ"/>
+                            <constraint firstItem="HIX-BJ-4D1" firstAttribute="trailing" secondItem="gbQ-JF-LZ5" secondAttribute="trailing" constant="10" id="k4u-YN-8N3"/>
+                            <constraint firstItem="Ubo-Pr-HbL" firstAttribute="top" secondItem="HIX-BJ-4D1" secondAttribute="top" constant="5" id="nRH-vb-OL5"/>
+                            <constraint firstItem="Ubo-Pr-HbL" firstAttribute="leading" secondItem="HIX-BJ-4D1" secondAttribute="leading" constant="10" id="r94-Lf-r2q"/>
+                            <constraint firstItem="iwt-tj-nuE" firstAttribute="leading" secondItem="hfS-Vf-LsE" secondAttribute="leading" id="rhi-lA-J4g"/>
+                            <constraint firstItem="1h6-bh-iIK" firstAttribute="top" secondItem="Ubo-Pr-HbL" secondAttribute="bottom" constant="15" id="uUg-zA-g5M"/>
+                            <constraint firstItem="AUz-ko-jMY" firstAttribute="top" secondItem="gbQ-JF-LZ5" secondAttribute="bottom" constant="8" id="ubY-6k-3MH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HIX-BJ-4D1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVd-eY-foE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="112.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="662" height="662"/>
+        <image name="cloud.drizzle" catalog="system" width="64" height="62"/>
+        <image name="location.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
