@@ -9,13 +9,21 @@
 import Foundation
 
 struct WeatherManager {
-    let apiURL = "https://api.openweathermap.org/data/2.5/weather?appid=28f262e223d35b1a578208ef1b50769b&units=metric&q="
+    let apiURL = "https://api.openweathermap.org/data/2.5/weather?appid=28f262e223d35b1a578208ef1b50769b&units=metric&"
     var delegate: WeatherManagerDelegate?
     
     func fetchData(with cityName: String){
-        let path = "\(apiURL)\(cityName)"
-        
-        let url = URL(string: path)
+        let path = "\(apiURL)q=\(cityName)"
+        performRequest(with: path)
+    }
+    
+    func fetchData(lat latitude: Double, long longitude: Double){
+        let path = "\(apiURL)lat=\(latitude)&lon=\(longitude)"
+        performRequest(with: path)
+    }
+    
+    func performRequest(with urlString: String){
+        let url = URL(string: urlString)
         
         if let url = url{
             let session = URLSession(configuration: .default)
