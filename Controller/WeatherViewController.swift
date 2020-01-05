@@ -21,7 +21,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
-        weatherManager.fetchData(cityName: searchTextField.text!)
+        weatherManager.fetchData(with: searchTextField.text!)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -40,11 +40,17 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        weatherManager.fetchData(cityName: textField.text!)
+        weatherManager.fetchData(with: textField.text!)
     }
     
-    func didUpdateWeather(weather: Weather) {
-        print(weather.city)
+    func didUpdateWeather(_ manager: WeatherManager, weather: Weather) {
+        temperatureLabel.text = weather.formattedTemp
+        weatherCondition.image = UIImage.init(systemName: weather.condition)
+        cityLabel.text = weather.city
+    }
+    
+    func didFailedWithErrors(error: Error) {
+        print(error)
     }
     
     override func viewDidLoad() {

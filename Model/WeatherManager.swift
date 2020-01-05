@@ -9,10 +9,10 @@
 import Foundation
 
 struct WeatherManager {
-    let apiURL = "https://api.openweathermap.org/data/2.5/weather?appid=28f262e223d35b1a578208ef1b50769b&metrics=units&q="
+    let apiURL = "https://api.openweathermap.org/data/2.5/weather?appid=28f262e223d35b1a578208ef1b50769b&units=metric&q="
     var delegate: WeatherManagerDelegate?
     
-    func fetchData(cityName: String){
+    func fetchData(with cityName: String){
         let path = "\(apiURL)\(cityName)"
         
         let url = URL(string: path)
@@ -22,12 +22,14 @@ struct WeatherManager {
             
             let task = session.dataTask(with: url) { (data, _, err) in
                 if let error = err{
-                    print(error)
+                    self.delegate?.didFailedWithErrors(error: error)
                 }
                 
                 if let data = data{
-                    if let weather = self.parseJson(weatherData: data) {
-                        self.delegate?.didUpdateWeather(weather: weather)
+                    if let weather = self.parseJson(data) {
+                        DispatchQueue.main.async {
+                            self.delegate?.didUpdateWeather(self, weather: weather)
+                        }
                     }
                 }
             }
@@ -36,7 +38,7 @@ struct WeatherManager {
         }
     }
     
-    func parseJson(weatherData: Data) -> Weather? {
+    func parseJson(_ weatherData: Data) -> Weather? {
         let decoder = JSONDecoder()
         
         do {
@@ -45,7 +47,7 @@ struct WeatherManager {
             
             return weather
         } catch {
-            print(error)
+            delegate?.didFailedWithErrors(error: error)
             
             return nil
         }

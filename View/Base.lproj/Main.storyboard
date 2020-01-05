@@ -62,35 +62,31 @@
                                     <constraint firstAttribute="width" constant="100" id="fbH-VH-a1x"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gbQ-JF-LZ5" userLabel="Temperature Stack View">
-                                <rect key="frame" x="254" y="206" width="150" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gbQ-JF-LZ5" userLabel="Temperature Stack View">
+                                <rect key="frame" x="259" y="206" width="145" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="19" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7L1-xz-dKD">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="72"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2M-eh-DQO">
-                                        <rect key="frame" x="77" y="0.0" width="24.5" height="100"/>
+                                        <rect key="frame" x="72" y="0.0" width="24.5" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEJ-JL-XXR">
-                                        <rect key="frame" x="106.5" y="0.0" width="43.5" height="100"/>
+                                        <rect key="frame" x="101.5" y="0.0" width="43.5" height="72"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="RzA-e3-54n"/>
-                                    <constraint firstAttribute="height" constant="100" id="ffi-U3-qG8"/>
-                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUz-ko-jMY">
-                                <rect key="frame" x="296.5" y="314" width="102.5" height="35"/>
+                                <rect key="frame" x="296.5" y="286" width="102.5" height="35"/>
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>

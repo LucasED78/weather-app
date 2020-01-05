@@ -9,5 +9,6 @@
 import Foundation
 
 protocol WeatherManagerDelegate {
-    func didUpdateWeather(weather: Weather)
+    func didUpdateWeather(_ manager: WeatherManager, weather: Weather)
+    func didFailedWithErrors(error: Error)
 }
