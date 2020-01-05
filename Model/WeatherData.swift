@@ -11,13 +11,14 @@ import Foundation
 struct WeatherData: Decodable {
     let name: String
     let main: Main
-    let weather: [Weather]
+    let weather: [WeatherJSON]
 }
 
 struct Main: Decodable {
     let temp: Double
 }
 
-struct Weather: Decodable {
+struct WeatherJSON: Decodable {
+    let id: Int
     let description: String
 }
