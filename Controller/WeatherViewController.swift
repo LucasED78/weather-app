@@ -20,34 +20,34 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
-        print(searchTextField.text)
+        WeatherManager().fetchData(cityName: searchTextField.text!)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
-        print(textField.text)
         return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text == ""{
             textField.placeholder = "type something"
-            textField.textColor = UIColor.systemRed
+            
+            return false
         }
         
-        return textField.text == ""
+        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField.text)
+        WeatherManager().fetchData(cityName: textField.text!)
     }
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchTextField.delegate = self
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "search", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemRed])
         // Do any additional setup after loading the view.
     }
 
